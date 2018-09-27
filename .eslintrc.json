@@ -1,0 +1,15 @@
+{
+  "parser": "babel-eslint",
+  "extends": "google",
+  "plugins": ["flowtype"],
+  "rules": {
+    "no-invalid-this": "off",
+    "indent": ["error", 2],
+    "arrow-parens": "off",
+    "require-jsdoc": "off",
+    "comma-dangle": "off",
+    "max-len": ["error", { "code": 120 }],
+    "object-curly-spacing": "off",
+    "no-unused-vars": "error"
+  }
+}

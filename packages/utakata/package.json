@@ -1,0 +1,19 @@
+{
+  "name": "@yssk22/utakata",
+  "version": "1.0.0",
+  "description": "Redux Library",
+  "author": "yssk22 <yssk22@gmail.com",
+  "license": "MIT",
+  "scripts": {},
+  "devDependencies": {
+    "@yssk22/mizuki": "^1.0.0",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^23.6.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "flow-bin": "^0.81.0",
+    "flow-cli": "^0.0.0-pre",
+    "jest": "^23.6.0",
+    "jest-cli": "^23.6.0"
+  }
+}
