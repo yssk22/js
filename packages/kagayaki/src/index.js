@@ -2,5 +2,12 @@
 import AppRoot from './AppRoot';
 import AppScreen from './AppScreen';
 import ScrollViewList from './ScrollViewList';
+import {
+  type AppContext,
+  type ServiceConfig,
+  type AppAuth,
+  withAppContext
+} from './withAppContext';
 
-export { AppRoot, AppScreen, ScrollViewList };
+export type { AppContext, ServiceConfig, AppAuth };
+export { AppRoot, AppScreen, ScrollViewList, withAppContext };
