@@ -7,17 +7,17 @@ const initialState = {
 
 export default function reducer(state = initialState, action = {}) {
   switch (action.type) {
-    case REACT_NATIVE_ROUTER_FLUX_FOCUS:
-      return {
-        ...state,
-        scene: action.scene
-      };
-    case REACT_ROUTER_LOCATION_CHANGE:
-      return {
-        ...state,
-        locationBeforeTransitions: action.payload
-      };
-    default:
-      return state;
+  case REACT_NATIVE_ROUTER_FLUX_FOCUS:
+    return {
+      ...state,
+      scene: action.scene
+    };
+  case REACT_ROUTER_LOCATION_CHANGE:
+    return {
+      ...state,
+      locationBeforeTransitions: action.payload
+    };
+  default:
+    return state;
   }
 }
