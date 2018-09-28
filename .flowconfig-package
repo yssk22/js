@@ -2,8 +2,11 @@
 .*/node_modules/.*
 
 [include]
+../mizuki
+../utakata
 
 [libs]
+../../flow-typed
 
 [lints]
 
@@ -12,5 +15,5 @@ munge_underscores=true
 module.file_ext=.js
 module.file_ext=.web.js
 module.file_ext=.native.js
-module.name_mapper='^@yssk22/\(.*\)$' -> '<PROJECT_ROOT>/packages/\1'
+module.name_mapper='^@yssk22/\(.*\)$' -> '<PROJECT_ROOT>/../\1'
 

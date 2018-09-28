@@ -4,7 +4,10 @@
   "description": "Base JavaScript Library",
   "author": "yssk22 <yssk22@gmail.com",
   "license": "MIT",
-  "devDependencies": {
-    "flow-bin": "^0.81.0"
+  "dependencies": {
+  },
+  "scripts": {
+    "test": "./../../node_modules/.bin/jest",
+    "flow": "./../../node_modules/.bin/flow check"
   }
 }

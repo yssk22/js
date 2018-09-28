@@ -4,6 +4,7 @@
     "packages/*"
   ],
   "scripts": {
+    "flow": "./node_modules/.bin/flow check",
     "lint": "./node_modules/.bin/eslint ./packages/",
     "lint-fix": "./node_modules/.bin/eslint --fix ./packages/"
   },
