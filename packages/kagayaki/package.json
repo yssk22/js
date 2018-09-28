@@ -1,0 +1,13 @@
+{
+  "name": "@yssk22/kagayaki",
+  "version": "1.0.0",
+  "description": "Universal UI package",
+  "author": "yssk22 <yssk22@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+  },
+  "scripts": {
+    "test": "./../../node_modules/.bin/jest",
+    "flow": "./../../node_modules/.bin/flow check"
+  }
+}
