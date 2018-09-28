@@ -24,7 +24,7 @@ jobs:
           command: yarn run flow
       - run:
           name: Test
-          command: yarn run test
+          command: yarn run test --coverage --coverageDirectory=./coverage
       - run:
           name: Codecov
           command: yarn run codecov

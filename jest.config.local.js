@@ -1,4 +1,3 @@
 module.exports = {
-  coverageDirectory: './coverage',
-  collectCoverage: true
+  preset: 'react-native'
 };

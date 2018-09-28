@@ -8,7 +8,8 @@ let config = {
   testURL: 'http://localhost',
   testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/speedland/'],
   globals: {
-    window: {}
+    window: {},
+    __DEV__: true
   }
 };
 const localConfigPath = path.resolve('./jest.config.local.js');
