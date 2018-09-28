@@ -1,15 +1,16 @@
 {
   "parser": "babel-eslint",
   "extends": "google",
-  "plugins": ["flowtype"],
+  "plugins": ["flowtype", "react"],
   "rules": {
     "no-invalid-this": "off",
-    "indent": ["error", 2],
     "arrow-parens": "off",
     "require-jsdoc": "off",
     "comma-dangle": "off",
     "max-len": ["error", { "code": 120 }],
     "object-curly-spacing": "off",
-    "no-unused-vars": "error"
+    "no-unused-vars": "error",
+    "react/jsx-uses-react": 1,
+    "react/jsx-uses-vars": 1
   }
 }

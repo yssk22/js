@@ -1,5 +1,5 @@
 /* @flow */
-import { add } from "@yssk22/mizuki";
+import { add } from '@yssk22/mizuki';
 
 module.exports = {
   add
