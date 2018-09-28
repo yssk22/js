@@ -1,0 +1,21 @@
+{
+  "name": "@yssk22/hatachi",
+  "version": "1.0.0",
+  "description": "Admin Web App",
+  "author": "yssk22 <yssk22@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.5.2",
+    "react-app-rewired": "^1.6.2",
+    "react-dom": "^16.5.2"
+  },
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "./../../node_modules/.bin/jest",
+    "flow": "./../../node_modules/.bin/flow check"
+  },
+  "devDependencies": {
+    "react-app-rewire-yarn-workspaces": "^1.0.3"
+  }
+}
