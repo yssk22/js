@@ -8,13 +8,4 @@ import * as object from './object';
 import * as url from './url';
 import * as uuid from './uuid';
 
-module.exports = {
-  date,
-  Enum,
-  environment,
-  events,
-  number,
-  object,
-  url,
-  uuid
-};
+export { date, Enum, environment, events, number, object, url, uuid };
