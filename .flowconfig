@@ -4,6 +4,7 @@
 [include]
 
 [libs]
+./packages/utakata/flow-typed
 
 [lints]
 
