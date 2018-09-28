@@ -1,0 +1,30 @@
+version: 2.0
+jobs:
+  build:
+    working_directory: ~/workspace
+    docker:
+      - image: node:8.12.0
+    steps:
+      - checkout
+      - restore_cache:
+          key: js-{{ .Branch }}-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install Dependencies
+          command: yarn
+      - save_cache:
+          key: js-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/workspace/node_modules
+            - ~/.cache/yarn/          
+      - run:
+          name: Lint
+          command: yarn run lint
+      - run:
+          name: Flow
+          command: yarn run flow
+      - run:
+          name: Test
+          command: yarn run test
+      - run:
+          name: Codecov
+          command: yarn run codecov
