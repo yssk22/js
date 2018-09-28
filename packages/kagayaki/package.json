@@ -5,9 +5,15 @@
   "author": "yssk22 <yssk22@gmail.com",
   "license": "MIT",
   "dependencies": {
+    "react": "16.3.1",
+    "react-native": "0.55.4",
+    "react-native-web": "^0.9.1"
   },
   "scripts": {
     "test": "./../../node_modules/.bin/jest",
     "flow": "./../../node_modules/.bin/flow check"
+  },
+  "devDependencies": {
+    "flow-bin": "^0.81.0"
   }
 }
