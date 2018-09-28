@@ -56,4 +56,4 @@ export class UrlResolver {
   }
 }
 
-export default new UrlResolver();
+export const defaultResolver = new UrlResolver();

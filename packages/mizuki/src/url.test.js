@@ -2,7 +2,7 @@
 import * as url from './url';
 
 describe('UrlResolver', () => {
-  const defaultResolver = url.default;
+  const defaultResolver = url.defaultResolver;
   const customResolver = new url.UrlResolver('http://www.example.com');
   test('resolve', () => {
     expect(defaultResolver.resolve('/aaa')).toBe('/aaa');
