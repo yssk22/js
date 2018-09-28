@@ -76,7 +76,7 @@ describe('shallowCopy', () => {
     expect(copy).toEqual(obj);
     copy.add = 'foo';
     copy.foo.bar.hoge = 'xxx';
-    expect(obj.add).toBe(undefined);
+    expect((obj: any).add).toBe(undefined);
     expect(obj.foo.bar.hoge).toBe('xxx'); // nested object is shared with the original
   });
   test('array', () => {
