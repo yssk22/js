@@ -16,7 +16,7 @@
     "react-router-redux": "^4.0.8"
   },
   "scripts": {
-    "test": "./../../node_modules/.bin/jest",
+    "test": "cd ../../ && ./node_modules/.bin/jest ./packages/kagayaki",
     "flow": "./../../node_modules/.bin/flow check"
   },
   "devDependencies": {
