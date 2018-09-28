@@ -14,7 +14,6 @@ let config = {
 const localConfigPath = path.resolve('./jest.config.local.js');
 if (fs.existsSync(localConfigPath)) {
   config = Object.assign({}, config, require(localConfigPath));
-  console.log(config);
 }
 
 module.exports = config;
