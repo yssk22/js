@@ -6,6 +6,7 @@ scripts/
 
 [libs]
 ./packages/utakata/flow-typed
+./packages/kagayaki/flow-typed
 
 [lints]
 
