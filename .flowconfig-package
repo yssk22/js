@@ -7,6 +7,8 @@
 
 [libs]
 ../../flow-typed
+../utakata/flow-typed
+../kagayaki/flow-typed
 
 [lints]
 
