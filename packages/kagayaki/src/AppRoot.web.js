@@ -14,7 +14,7 @@ const store = rest.createStore();
 const routerHistory = syncHistoryWithStore(createHistory(), store);
 
 type Props = {
-  theme: { [string]: any },
+  theme?: { [string]: any },
   children: Node
 };
 
