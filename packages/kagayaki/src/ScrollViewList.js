@@ -11,11 +11,7 @@ type Props<T> = {
 
 const ScrollViewList = function<T>(props: Props<T>) {
   const data = props.data || [];
-  const func =
-    props.childComponentFunc ||
-    (() => {
-      return null;
-    });
+  const func = props.childComponentFunc;
   const refreshing = props.refreshing || false;
   return (
     <ScrollView
