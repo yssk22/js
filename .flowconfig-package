@@ -4,6 +4,7 @@
 [include]
 ../mizuki
 ../utakata
+../kagayaki
 
 [libs]
 ../../flow-typed

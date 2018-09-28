@@ -5,9 +5,15 @@
   "author": "yssk22 <yssk22@gmail.com",
   "license": "MIT",
   "dependencies": {
-    "react": "16.3.1",
+    "@material-ui/core": "^3.1.1",
+    "@material-ui/icons": "^3.0.1",
+    "history": "^4.7.2",
+    "react": "16.5.2",
     "react-native": "0.55.4",
-    "react-native-web": "^0.9.1"
+    "react-native-web": "^0.9.1",
+    "react-redux": "^5.0.7",
+    "react-router": "^4.3.1",
+    "react-router-redux": "^4.0.8"
   },
   "scripts": {
     "test": "./../../node_modules/.bin/jest",
