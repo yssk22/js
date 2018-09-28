@@ -1,8 +1,10 @@
 {
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
+  "workspaces": {
+    "packages" : [
+      "packages/*"
+    ]
+  },
   "scripts": {
     "test": "./node_modules/.bin/jest",
     "flow": "./node_modules/.bin/flow check",
@@ -26,8 +28,5 @@
     "flow-typed": "^2.5.1",
     "jest": "^23.6.0",
     "jest-cli": "^23.6.0"
-  },
-  "dependencies": {
-    "react-native": "0.55.4"
   }
 }

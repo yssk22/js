@@ -1,2 +1,4 @@
 /* @flow */
-module.exports = {};
+import ScrollViewList from './ScrollViewList';
+
+export { ScrollViewList };

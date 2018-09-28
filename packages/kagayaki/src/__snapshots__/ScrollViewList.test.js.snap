@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ScrollViewList render 1`] = `
+<RCTScrollView
+  refreshControl={
+    <RefreshControlMock
+      refreshing={false}
+    />
+  }
+>
+  <RCTRefreshControl />
+  <View>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+    >
+      1
+    </Text>
+  </View>
+</RCTScrollView>
+`;
