@@ -4,8 +4,19 @@
   "description": "Redux Library",
   "author": "yssk22 <yssk22@gmail.com",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "test": "./../../node_modules/.bin/jest",
+    "flow": "./../../node_modules/.bin/flow check"
+  },
   "dependencies": {
-    "@yssk22/mizuki": "^1.0.0"
+    "@yssk22/mizuki": "^1.0.0",
+    "react": "^16.5.2",
+    "react-redux": "^5.0.7",
+    "redux-thunk": "^2.3.0",
+    "superagent": "^4.0.0-beta.5",
+    "superagent-defaults": "^0.1.14"
+  },
+  "devDependencies": {
+    "flow-bin": "^0.81.0"
   }
 }

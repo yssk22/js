@@ -1,3 +1,8 @@
 /* @flow */
+import RouterReducer from './RouterReducer';
+import * as rest from './rest';
 
-module.exports = {};
+module.exports = {
+  rest,
+  RouterReducer
+};
