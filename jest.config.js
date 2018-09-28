@@ -9,9 +9,7 @@ let config = {
   testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/speedland/'],
   globals: {
     window: {}
-  },
-  coverageDirectory: './coverage',
-  collectCoverage: true
+  }
 };
 const localConfigPath = path.resolve('./jest.config.local.js');
 if (fs.existsSync(localConfigPath)) {
