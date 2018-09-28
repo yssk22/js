@@ -3,6 +3,7 @@
   "extends": "google",
   "plugins": ["flowtype", "react"],
   "rules": {
+    "indent": ["error", 2],
     "no-invalid-this": "off",
     "arrow-parens": "off",
     "require-jsdoc": "off",
