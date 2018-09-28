@@ -2,7 +2,7 @@
 import * as environment from './environment';
 
 test('maybeDev', () => {
-  expect(environment.maybeDev()).toBe(false);
+  expect(environment.maybeDev()).toBe(true);
 });
 
 test('maybeTest', () => {

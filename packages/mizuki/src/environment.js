@@ -37,7 +37,9 @@ export function maybeTest(): boolean {
       if (v.endsWith('/jest')) {
         return true;
       }
-
+      if (v.endsWith('/jest.js')) {
+        return true;
+      }
       if (v.includes('node_modules/jest-worker')) {
         return true;
       }
