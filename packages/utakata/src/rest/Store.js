@@ -124,21 +124,21 @@ export function updateStore<T>(
         events.fatal(ComponentName, `null resource state for ${found.resource.toString()}`);
       }
       switch (found.resource.__state.status) {
-      case ResourceStatusValues.NONE:
-        found.resource.__state.previous = object.deepCopy(found.resource);
-        found.resource.__state.status = ResourceStatusValues.EDIT;
-        break;
-      case ResourceStatusValues.EDIT:
-        break;
-      case ResourceStatusValues.DRAFT:
-        break;
-      default:
-        events.error(
-          ComponentName,
-          `invalid resource state '${
-            found.resource.__state.status
-          }' for ${found.resource.toString()}`
-        );
+        case ResourceStatusValues.NONE:
+          found.resource.__state.previous = object.deepCopy(found.resource);
+          found.resource.__state.status = ResourceStatusValues.EDIT;
+          break;
+        case ResourceStatusValues.EDIT:
+          break;
+        case ResourceStatusValues.DRAFT:
+          break;
+        default:
+          events.error(
+            ComponentName,
+            `invalid resource state '${
+              found.resource.__state.status
+            }' for ${found.resource.toString()}`
+          );
       }
       updateResource(found.resource, u);
     }
@@ -153,12 +153,12 @@ export function updateResource<T>(
   Object.keys(update.fields).forEach(key => {
     const uu = update.fields[key];
     switch (uu.type) {
-    case 'delete':
-      delete resource[key];
-      break;
-    default:
-      resource[key] = uu.value;
-      break;
+      case 'delete':
+        delete resource[key];
+        break;
+      default:
+        resource[key] = uu.value;
+        break;
     }
   });
   return resource;
@@ -214,16 +214,16 @@ export function updateByServer<T>(
       store.data[found.index] = resource;
     } else {
       switch (strategy) {
-      case 'push':
-        const idx = store.data.push(resource) - 1;
-        store.dataIndex[id] = idx;
-        break;
-      case 'unshift':
-        store.data.unshift(resource);
-        break;
-      default:
-        store.data.push(resource);
-        break;
+        case 'push':
+          const idx = store.data.push(resource) - 1;
+          store.dataIndex[id] = idx;
+          break;
+        case 'unshift':
+          store.data.unshift(resource);
+          break;
+        default:
+          store.data.push(resource);
+          break;
       }
     }
     return resource;
@@ -252,11 +252,11 @@ export function validateStore<T>(store: ?ResourceStore<T>) {
   }
   _validateStore(store.drafts, store.draftIndex, (key: string, val: ResourceWithState<T>) => {
     switch (val.__state.status) {
-    case ResourceStatusValues.DRAFT:
-    case ResourceStatusValues.CREATING:
-      break;
-    default:
-      throw new Error(`key "${key}" is in invalid status "${val.__state.status}"`);
+      case ResourceStatusValues.DRAFT:
+      case ResourceStatusValues.CREATING:
+        break;
+      default:
+        throw new Error(`key "${key}" is in invalid status "${val.__state.status}"`);
     }
     if (val.__state.previous !== null) {
       throw new Error(`draft key "${key}" should not have the previous object`);
@@ -264,10 +264,10 @@ export function validateStore<T>(store: ?ResourceStore<T>) {
   });
   _validateStore(store.data, store.dataIndex, (key: string, val: ResourceWithState<T>) => {
     switch (val.__state.status) {
-    case ResourceStatusValues.DRAFT:
-    case ResourceStatusValues.CREATING:
-      throw new Error(`key "${key}" is in invalid status "${val.__state.status}"`);
-    default:
+      case ResourceStatusValues.DRAFT:
+      case ResourceStatusValues.CREATING:
+        throw new Error(`key "${key}" is in invalid status "${val.__state.status}"`);
+      default:
     }
   });
 }

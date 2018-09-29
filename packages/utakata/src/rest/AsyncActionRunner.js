@@ -49,14 +49,14 @@ export class AsyncActionRunner<T> {
 
   reduceResource(reduce: 'replace' | 'merge' | ((T, T) => T)) {
     switch (reduce) {
-    case 'replace':
-      this._options.reduceResource = replaceResource;
-      break;
-    case 'merge':
-      this._options.reduceResource = mergeResource;
-      break;
-    default:
-      this._options.reduceResource = reduce;
+      case 'replace':
+        this._options.reduceResource = replaceResource;
+        break;
+      case 'merge':
+        this._options.reduceResource = mergeResource;
+        break;
+      default:
+        this._options.reduceResource = reduce;
     }
   }
 

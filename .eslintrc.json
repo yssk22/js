@@ -1,9 +1,9 @@
 {
   "parser": "babel-eslint",
-  "extends": "google",
-  "plugins": ["flowtype", "react"],
+  "extends": ["prettier", "plugin:flowtype/recommended", "google"],
+  "plugins": ["prettier", "flowtype", "react"],
   "rules": {
-    "indent": ["error", 2],
+    "indent": ["error", 2, {"SwitchCase": 1}],
     "no-invalid-this": "off",
     "arrow-parens": "off",
     "require-jsdoc": "off",
@@ -11,7 +11,10 @@
     "max-len": ["error", { "code": 120 }],
     "object-curly-spacing": "off",
     "no-unused-vars": "error",
-    "react/jsx-uses-react": 1,
-    "react/jsx-uses-vars": 1
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
+    "flowtype/generic-spacing": "off",
+    "flowtype/space-after-type-colon": "off",
+    "prettier/prettier": "error"
   }
 }
