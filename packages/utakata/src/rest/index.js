@@ -3,19 +3,18 @@ import React, { type ComponentType, type Node } from 'react';
 import { connect } from 'react-redux';
 import { createStore as _createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
+import configureStore from 'redux-mock-store';
+
 import RouterReducer from '../RouterReducer';
 import RestAction from './RestAction';
 import { ResourceSettings } from './ResourceSettings';
-import {
-  type RestResourceStoreCollection,
-  type ResourceWithState as ResourceWithState_,
-  rebuildIndexes
-} from './Store';
+import { type RestResourceStoreCollection, type ResourceWithState, rebuildIndexes } from './Store';
 import { APIError } from './APIError';
 import Helper from './Helper';
 import * as CollectionSortStrategy from './CollectionSortStrategy';
 
 const defaultAction = new RestAction();
+const mockStore = configureStore();
 const createStore = () => {
   return compose(applyMiddleware(thunk))(_createStore)(
     combineReducers({
@@ -26,8 +25,12 @@ const createStore = () => {
   );
 };
 
-const withRest = (c: ComponentType<*>) => {
-  return connect(state => {
+type Prop = {
+  rest: RestResourceStoreCollection
+};
+
+const withResources = (c: ComponentType<*>) => {
+  return connect((state: Prop) => {
     return {
       rest: state.rest
     };
@@ -39,8 +42,8 @@ type ProviderProps = {
   children?: Node
 };
 
-const RestProvider = connect()(
-  class RestProvider_ extends React.Component<ProviderProps> {
+const Provider = connect()(
+  class Provider_ extends React.Component<ProviderProps> {
     constructor(props: ProviderProps) {
       super(props);
       defaultAction.setDispatch(props.dispatch);
@@ -51,13 +54,7 @@ const RestProvider = connect()(
   }
 );
 
-export type RestProp = {
-  rest: RestResourceStoreCollection
-};
-
-export type ResourceWithState<T> = ResourceWithState_<T>;
-
-class RestPropPreparer<T> {
+class MockPropsCreator<T> {
   _settings: ResourceSettings<T>;
   _data: Array<ResourceWithState<T>>;
   _drafts: Array<ResourceWithState<T>>;
@@ -72,7 +69,7 @@ class RestPropPreparer<T> {
     this._error = null;
   }
 
-  data(v: T): RestPropPreparer<T> {
+  data(v: T): MockPropsCreator<T> {
     this._data.push(
       Object.assign({}, v, {
         __state: {
@@ -86,7 +83,7 @@ class RestPropPreparer<T> {
     return this;
   }
 
-  draft(v: T): RestPropPreparer<T> {
+  draft(v: T): MockPropsCreator<T> {
     this._drafts.push(
       Object.assign({}, v, {
         __state: {
@@ -100,17 +97,17 @@ class RestPropPreparer<T> {
     return this;
   }
 
-  status(s: 'none' | 'reading'): RestPropPreparer<T> {
+  status(s: 'none' | 'reading'): MockPropsCreator<T> {
     this._status = s;
     return this;
   }
 
-  error(e: string): RestPropPreparer<T> {
+  error(e: string): MockPropsCreator<T> {
     this._error = e;
     return this;
   }
 
-  prepare(): RestProp {
+  mock(): any {
     const state = {
       data: this._data,
       dataIndex: rebuildIndexes(this._data, this._settings),
@@ -123,22 +120,24 @@ class RestPropPreparer<T> {
       rest: {}
     };
     props.rest[this._settings.getCollectionUrl()] = state;
-    return props;
+    return mockStore(props);
   }
 }
 
-function restProps<T>(settings: ResourceSettings<T>): RestPropPreparer<T> {
-  return new RestPropPreparer(settings);
+function mockProps<T>(settings: ResourceSettings<T>): MockPropsCreator<T> {
+  return new MockPropsCreator(settings);
 }
+
+export type { Prop, ResourceWithState as Resource };
 
 export {
   defaultAction as Action,
-  ResourceSettings,
   APIError,
-  Helper,
-  RestProvider,
   createStore,
-  withRest,
   CollectionSortStrategy,
-  restProps
+  Helper,
+  ResourceSettings,
+  Provider,
+  mockProps,
+  withResources
 };

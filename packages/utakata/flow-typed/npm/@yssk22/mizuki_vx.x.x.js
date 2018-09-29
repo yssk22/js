@@ -1,4 +1,4 @@
-// flow-typed signature: a16e7054a7f27945c4f8e01d522539ca
+// flow-typed signature: 83798288f730046094be7eee7bcff362
 // flow-typed version: <<STUB>>/@yssk22/mizuki_v^1.0.0/flow_v0.81.0
 
 /**
@@ -22,14 +22,6 @@ declare module '@yssk22/mizuki' {
  * require those files directly. Feel free to delete any files that aren't
  * needed.
  */
-declare module '@yssk22/mizuki/coverage/lcov-report/prettify' {
-  declare module.exports: any;
-}
-
-declare module '@yssk22/mizuki/coverage/lcov-report/sorter' {
-  declare module.exports: any;
-}
-
 declare module '@yssk22/mizuki/jest.config' {
   declare module.exports: any;
 }
@@ -107,12 +99,6 @@ declare module '@yssk22/mizuki/src/uuid' {
 }
 
 // Filename aliases
-declare module '@yssk22/mizuki/coverage/lcov-report/prettify.js' {
-  declare module.exports: $Exports<'@yssk22/mizuki/coverage/lcov-report/prettify'>;
-}
-declare module '@yssk22/mizuki/coverage/lcov-report/sorter.js' {
-  declare module.exports: $Exports<'@yssk22/mizuki/coverage/lcov-report/sorter'>;
-}
 declare module '@yssk22/mizuki/index' {
   declare module.exports: $Exports<'@yssk22/mizuki'>;
 }
