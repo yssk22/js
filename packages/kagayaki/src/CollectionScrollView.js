@@ -1,5 +1,5 @@
 /* @flow */
-import React from 'react';
+import React, { type Node } from 'react';
 import { View, Text, Button } from 'react-native';
 import ScrollView from './ScrollView';
 import { rest } from '@yssk22/utakata';
