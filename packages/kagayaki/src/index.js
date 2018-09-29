@@ -1,7 +1,7 @@
 /* @flow */
 import AppRoot from './AppRoot';
 import AppScreen from './AppScreen';
-import ScrollViewList from './ScrollViewList';
+import ScrollViewList from './ScrollView';
 import {
   type AppContext,
   type ServiceConfig,
