@@ -37,12 +37,13 @@ cat <<-EOS > "${PACKAGE_PATH}/package.json"
 EOS
 
 cat <<-EOS > "${PACKAGE_PATH}/index.js"
+/* @flow */
 export * from './src/index';
 EOS
 
 cat <<-EOS > "${PACKAGE_PATH}/src/index.js"
 /* @flow */
-module.exports = {};
+export {};
 EOS
 
 
