@@ -2,6 +2,7 @@
 import AppRoot from './AppRoot';
 import AppScreen from './AppScreen';
 import ScrollViewList from './ScrollView';
+import CollectionScrollView from './CollectionScrollView';
 import {
   type AppContext,
   type ServiceConfig,
@@ -10,4 +11,4 @@ import {
 } from './withAppContext';
 
 export type { AppContext, ServiceConfig, AppAuth };
-export { AppRoot, AppScreen, ScrollViewList, withAppContext };
+export { AppRoot, AppScreen, CollectionScrollView, ScrollViewList, withAppContext };
