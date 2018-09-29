@@ -25,12 +25,12 @@ const createStore = () => {
   );
 };
 
-type Prop = {
+type Props = {
   rest: RestResourceStoreCollection
 };
 
 const withResources = (c: ComponentType<*>) => {
-  return connect((state: Prop) => {
+  return connect((state: Props) => {
     return {
       rest: state.rest
     };
@@ -128,7 +128,7 @@ function mockProps<T>(settings: ResourceSettings<T>): MockPropsCreator<T> {
   return new MockPropsCreator(settings);
 }
 
-export type { Prop, ResourceWithState as Resource };
+export type { Props, ResourceWithState as Resource };
 
 export {
   defaultAction as Action,
