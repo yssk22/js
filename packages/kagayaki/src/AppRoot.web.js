@@ -58,9 +58,9 @@ export default class AppRoot extends React.Component<Props> {
         >
           <MuiThemeProvider theme={createMuiTheme(theme_)}>
             <Provider store={store}>
-              <rest.RestProvider>
+              <rest.Provider>
                 <Router history={routerHistory}>{this.props.children}</Router>
-              </rest.RestProvider>
+              </rest.Provider>
             </Provider>
           </MuiThemeProvider>
         </ApplicationContextProvider>
