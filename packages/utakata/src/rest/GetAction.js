@@ -199,7 +199,7 @@ export class GetAction<T> {
       } else {
         if (!Array.isArray(res.body)) {
           events.fatal(
-            'speedland/redux/rest.GetAction.GetCollection',
+            '@yssk22/kagayaki/rest.GetCollection',
             'the endpoint does not return a collection of resources',
             {
               uri: uri,

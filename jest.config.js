@@ -6,7 +6,7 @@ let config = {
     '^.+\\.(js)$': './jest.transform.js'
   },
   testURL: 'http://localhost',
-  testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/speedland/'],
+  testPathIgnorePatterns: ['<rootDir>/node_modules/'],
   globals: {
     window: {},
     __DEV__: true
