@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ScrollViewList render 1`] = `
+exports[`ScrollView render 1`] = `
 <RCTScrollView
   refreshControl={
     <RefreshControlMock
