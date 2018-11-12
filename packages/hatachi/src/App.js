@@ -1,25 +1,9 @@
 /* @flow */
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
-import { AppRoot, AppScreen, ScrollViewList } from '@yssk22/kagayaki';
+import { AppRoot, AppScreen } from '@yssk22/kagayaki';
+import ConfigScreen from './ui/configs/';
 
 type Props = {};
-
-const C = () => {
-  return (
-    <ScrollViewList
-      refreshing={false}
-      data={[{ a: 1 }]}
-      childComponentFunc={(v, idx) => {
-        return (
-          <View key={idx}>
-            <Text>{v.a}</Text>
-          </View>
-        );
-      }}
-    />
-  );
-};
 
 class App extends Component<Props> {
   render() {
@@ -27,7 +11,7 @@ class App extends Component<Props> {
     // TODO: implement Async Task Manager
     return (
       <AppRoot>
-        <AppScreen path="/" component={C} />
+        <AppScreen path="/" component={ConfigScreen} />
       </AppRoot>
     );
   }

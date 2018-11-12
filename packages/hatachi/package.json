@@ -17,5 +17,6 @@
   },
   "devDependencies": {
     "react-app-rewire-yarn-workspaces": "^1.0.3"
-  }
+  },
+  "proxy": "http://speedland-prod.appspot.com/"
 }
