@@ -1,4 +1,4 @@
-// flow-typed signature: 95f18d3f7d430f3f461f7ebb19ca6c13
+// flow-typed signature: 9d583461f1a856d34935f5b2f5b1ba69
 // flow-typed version: <<STUB>>/@material-ui/core_v^3.1.1/flow_v0.81.0
 
 /**
@@ -67,6 +67,14 @@ declare module '@material-ui/core/BottomNavigationAction/BottomNavigationAction'
 }
 
 declare module '@material-ui/core/BottomNavigationAction/index' {
+  declare module.exports: any;
+}
+
+declare module '@material-ui/core/Box/Box' {
+  declare module.exports: any;
+}
+
+declare module '@material-ui/core/Box/index' {
   declare module.exports: any;
 }
 
@@ -386,6 +394,14 @@ declare module '@material-ui/core/es/BottomNavigationAction/index' {
   declare module.exports: any;
 }
 
+declare module '@material-ui/core/es/Box/Box' {
+  declare module.exports: any;
+}
+
+declare module '@material-ui/core/es/Box/index' {
+  declare module.exports: any;
+}
+
 declare module '@material-ui/core/es/Button/Button' {
   declare module.exports: any;
 }
@@ -686,6 +702,14 @@ declare module '@material-ui/core/es/ExpansionPanelSummary/index' {
   declare module.exports: any;
 }
 
+declare module '@material-ui/core/es/Fab/Fab' {
+  declare module.exports: any;
+}
+
+declare module '@material-ui/core/es/Fab/index' {
+  declare module.exports: any;
+}
+
 declare module '@material-ui/core/es/Fade/Fade' {
   declare module.exports: any;
 }
@@ -706,7 +730,19 @@ declare module '@material-ui/core/es/FormControl/FormControl' {
   declare module.exports: any;
 }
 
+declare module '@material-ui/core/es/FormControl/FormControlContext' {
+  declare module.exports: any;
+}
+
+declare module '@material-ui/core/es/FormControl/formControlState' {
+  declare module.exports: any;
+}
+
 declare module '@material-ui/core/es/FormControl/index' {
+  declare module.exports: any;
+}
+
+declare module '@material-ui/core/es/FormControl/withFormControlContext' {
   declare module.exports: any;
 }
 
@@ -922,6 +958,14 @@ declare module '@material-ui/core/es/LinearProgress/LinearProgress' {
   declare module.exports: any;
 }
 
+declare module '@material-ui/core/es/Link/index' {
+  declare module.exports: any;
+}
+
+declare module '@material-ui/core/es/Link/Link' {
+  declare module.exports: any;
+}
+
 declare module '@material-ui/core/es/List/index' {
   declare module.exports: any;
 }
@@ -930,11 +974,19 @@ declare module '@material-ui/core/es/List/List' {
   declare module.exports: any;
 }
 
+declare module '@material-ui/core/es/List/ListContext' {
+  declare module.exports: any;
+}
+
 declare module '@material-ui/core/es/ListItem/index' {
   declare module.exports: any;
 }
 
 declare module '@material-ui/core/es/ListItem/ListItem' {
+  declare module.exports: any;
+}
+
+declare module '@material-ui/core/es/ListItem/MergeListContext' {
   declare module.exports: any;
 }
 
@@ -1266,6 +1318,14 @@ declare module '@material-ui/core/es/styles/MuiThemeProvider' {
   declare module.exports: any;
 }
 
+declare module '@material-ui/core/es/styles/multiKeyStore' {
+  declare module.exports: any;
+}
+
+declare module '@material-ui/core/es/styles/reactJssContext' {
+  declare module.exports: any;
+}
+
 declare module '@material-ui/core/es/styles/shadows' {
   declare module.exports: any;
 }
@@ -1342,6 +1402,14 @@ declare module '@material-ui/core/es/Table/Table' {
   declare module.exports: any;
 }
 
+declare module '@material-ui/core/es/Table/TableContext' {
+  declare module.exports: any;
+}
+
+declare module '@material-ui/core/es/Table/Tablelvl2Context' {
+  declare module.exports: any;
+}
+
 declare module '@material-ui/core/es/TableBody/index' {
   declare module.exports: any;
 }
@@ -1382,11 +1450,7 @@ declare module '@material-ui/core/es/TablePagination/TablePagination' {
   declare module.exports: any;
 }
 
-declare module '@material-ui/core/es/TablePaginationActions/index' {
-  declare module.exports: any;
-}
-
-declare module '@material-ui/core/es/TablePaginationActions/TablePaginationActions' {
+declare module '@material-ui/core/es/TablePagination/TablePaginationActions' {
   declare module.exports: any;
 }
 
@@ -1435,6 +1499,10 @@ declare module '@material-ui/core/es/test-utils/createRender' {
 }
 
 declare module '@material-ui/core/es/test-utils/createShallow' {
+  declare module.exports: any;
+}
+
+declare module '@material-ui/core/es/test-utils/findOutermostIntrinsic' {
   declare module.exports: any;
 }
 
@@ -1490,11 +1558,19 @@ declare module '@material-ui/core/es/Typography/Typography' {
   declare module.exports: any;
 }
 
-declare module '@material-ui/core/es/utils/exactProp' {
+declare module '@material-ui/core/es/useMediaQuery/index' {
   declare module.exports: any;
 }
 
-declare module '@material-ui/core/es/utils/getDisplayName' {
+declare module '@material-ui/core/es/useMediaQuery/unstable_useMediaQuery' {
+  declare module.exports: any;
+}
+
+declare module '@material-ui/core/es/useMediaQuery/unstable_useMediaQueryTheme' {
+  declare module.exports: any;
+}
+
+declare module '@material-ui/core/es/utils/deprecatedPropType' {
   declare module.exports: any;
 }
 
@@ -1578,6 +1654,14 @@ declare module '@material-ui/core/ExpansionPanelSummary/index' {
   declare module.exports: any;
 }
 
+declare module '@material-ui/core/Fab/Fab' {
+  declare module.exports: any;
+}
+
+declare module '@material-ui/core/Fab/index' {
+  declare module.exports: any;
+}
+
 declare module '@material-ui/core/Fade/Fade' {
   declare module.exports: any;
 }
@@ -1598,7 +1682,19 @@ declare module '@material-ui/core/FormControl/FormControl' {
   declare module.exports: any;
 }
 
+declare module '@material-ui/core/FormControl/FormControlContext' {
+  declare module.exports: any;
+}
+
+declare module '@material-ui/core/FormControl/formControlState' {
+  declare module.exports: any;
+}
+
 declare module '@material-ui/core/FormControl/index' {
+  declare module.exports: any;
+}
+
+declare module '@material-ui/core/FormControl/withFormControlContext' {
   declare module.exports: any;
 }
 
@@ -1814,6 +1910,14 @@ declare module '@material-ui/core/LinearProgress/LinearProgress' {
   declare module.exports: any;
 }
 
+declare module '@material-ui/core/Link/index' {
+  declare module.exports: any;
+}
+
+declare module '@material-ui/core/Link/Link' {
+  declare module.exports: any;
+}
+
 declare module '@material-ui/core/List/index' {
   declare module.exports: any;
 }
@@ -1822,11 +1926,19 @@ declare module '@material-ui/core/List/List' {
   declare module.exports: any;
 }
 
+declare module '@material-ui/core/List/ListContext' {
+  declare module.exports: any;
+}
+
 declare module '@material-ui/core/ListItem/index' {
   declare module.exports: any;
 }
 
 declare module '@material-ui/core/ListItem/ListItem' {
+  declare module.exports: any;
+}
+
+declare module '@material-ui/core/ListItem/MergeListContext' {
   declare module.exports: any;
 }
 
@@ -2158,6 +2270,14 @@ declare module '@material-ui/core/styles/MuiThemeProvider' {
   declare module.exports: any;
 }
 
+declare module '@material-ui/core/styles/multiKeyStore' {
+  declare module.exports: any;
+}
+
+declare module '@material-ui/core/styles/reactJssContext' {
+  declare module.exports: any;
+}
+
 declare module '@material-ui/core/styles/shadows' {
   declare module.exports: any;
 }
@@ -2234,6 +2354,14 @@ declare module '@material-ui/core/Table/Table' {
   declare module.exports: any;
 }
 
+declare module '@material-ui/core/Table/TableContext' {
+  declare module.exports: any;
+}
+
+declare module '@material-ui/core/Table/Tablelvl2Context' {
+  declare module.exports: any;
+}
+
 declare module '@material-ui/core/TableBody/index' {
   declare module.exports: any;
 }
@@ -2274,11 +2402,7 @@ declare module '@material-ui/core/TablePagination/TablePagination' {
   declare module.exports: any;
 }
 
-declare module '@material-ui/core/TablePaginationActions/index' {
-  declare module.exports: any;
-}
-
-declare module '@material-ui/core/TablePaginationActions/TablePaginationActions' {
+declare module '@material-ui/core/TablePagination/TablePaginationActions' {
   declare module.exports: any;
 }
 
@@ -2327,6 +2451,10 @@ declare module '@material-ui/core/test-utils/createRender' {
 }
 
 declare module '@material-ui/core/test-utils/createShallow' {
+  declare module.exports: any;
+}
+
+declare module '@material-ui/core/test-utils/findOutermostIntrinsic' {
   declare module.exports: any;
 }
 
@@ -2390,11 +2518,19 @@ declare module '@material-ui/core/umd/material-ui.production.min' {
   declare module.exports: any;
 }
 
-declare module '@material-ui/core/utils/exactProp' {
+declare module '@material-ui/core/useMediaQuery/index' {
   declare module.exports: any;
 }
 
-declare module '@material-ui/core/utils/getDisplayName' {
+declare module '@material-ui/core/useMediaQuery/unstable_useMediaQuery' {
+  declare module.exports: any;
+}
+
+declare module '@material-ui/core/useMediaQuery/unstable_useMediaQueryTheme' {
+  declare module.exports: any;
+}
+
+declare module '@material-ui/core/utils/deprecatedPropType' {
   declare module.exports: any;
 }
 
@@ -2482,6 +2618,12 @@ declare module '@material-ui/core/BottomNavigationAction/BottomNavigationAction.
 }
 declare module '@material-ui/core/BottomNavigationAction/index.js' {
   declare module.exports: $Exports<'@material-ui/core/BottomNavigationAction/index'>;
+}
+declare module '@material-ui/core/Box/Box.js' {
+  declare module.exports: $Exports<'@material-ui/core/Box/Box'>;
+}
+declare module '@material-ui/core/Box/index.js' {
+  declare module.exports: $Exports<'@material-ui/core/Box/index'>;
 }
 declare module '@material-ui/core/Button/Button.js' {
   declare module.exports: $Exports<'@material-ui/core/Button/Button'>;
@@ -2720,6 +2862,12 @@ declare module '@material-ui/core/es/BottomNavigationAction/BottomNavigationActi
 declare module '@material-ui/core/es/BottomNavigationAction/index.js' {
   declare module.exports: $Exports<'@material-ui/core/es/BottomNavigationAction/index'>;
 }
+declare module '@material-ui/core/es/Box/Box.js' {
+  declare module.exports: $Exports<'@material-ui/core/es/Box/Box'>;
+}
+declare module '@material-ui/core/es/Box/index.js' {
+  declare module.exports: $Exports<'@material-ui/core/es/Box/index'>;
+}
 declare module '@material-ui/core/es/Button/Button.js' {
   declare module.exports: $Exports<'@material-ui/core/es/Button/Button'>;
 }
@@ -2945,6 +3093,12 @@ declare module '@material-ui/core/es/ExpansionPanelSummary/ExpansionPanelSummary
 declare module '@material-ui/core/es/ExpansionPanelSummary/index.js' {
   declare module.exports: $Exports<'@material-ui/core/es/ExpansionPanelSummary/index'>;
 }
+declare module '@material-ui/core/es/Fab/Fab.js' {
+  declare module.exports: $Exports<'@material-ui/core/es/Fab/Fab'>;
+}
+declare module '@material-ui/core/es/Fab/index.js' {
+  declare module.exports: $Exports<'@material-ui/core/es/Fab/index'>;
+}
 declare module '@material-ui/core/es/Fade/Fade.js' {
   declare module.exports: $Exports<'@material-ui/core/es/Fade/Fade'>;
 }
@@ -2960,8 +3114,17 @@ declare module '@material-ui/core/es/FilledInput/index.js' {
 declare module '@material-ui/core/es/FormControl/FormControl.js' {
   declare module.exports: $Exports<'@material-ui/core/es/FormControl/FormControl'>;
 }
+declare module '@material-ui/core/es/FormControl/FormControlContext.js' {
+  declare module.exports: $Exports<'@material-ui/core/es/FormControl/FormControlContext'>;
+}
+declare module '@material-ui/core/es/FormControl/formControlState.js' {
+  declare module.exports: $Exports<'@material-ui/core/es/FormControl/formControlState'>;
+}
 declare module '@material-ui/core/es/FormControl/index.js' {
   declare module.exports: $Exports<'@material-ui/core/es/FormControl/index'>;
+}
+declare module '@material-ui/core/es/FormControl/withFormControlContext.js' {
+  declare module.exports: $Exports<'@material-ui/core/es/FormControl/withFormControlContext'>;
 }
 declare module '@material-ui/core/es/FormControlLabel/FormControlLabel.js' {
   declare module.exports: $Exports<'@material-ui/core/es/FormControlLabel/FormControlLabel'>;
@@ -3122,17 +3285,29 @@ declare module '@material-ui/core/es/LinearProgress/index.js' {
 declare module '@material-ui/core/es/LinearProgress/LinearProgress.js' {
   declare module.exports: $Exports<'@material-ui/core/es/LinearProgress/LinearProgress'>;
 }
+declare module '@material-ui/core/es/Link/index.js' {
+  declare module.exports: $Exports<'@material-ui/core/es/Link/index'>;
+}
+declare module '@material-ui/core/es/Link/Link.js' {
+  declare module.exports: $Exports<'@material-ui/core/es/Link/Link'>;
+}
 declare module '@material-ui/core/es/List/index.js' {
   declare module.exports: $Exports<'@material-ui/core/es/List/index'>;
 }
 declare module '@material-ui/core/es/List/List.js' {
   declare module.exports: $Exports<'@material-ui/core/es/List/List'>;
 }
+declare module '@material-ui/core/es/List/ListContext.js' {
+  declare module.exports: $Exports<'@material-ui/core/es/List/ListContext'>;
+}
 declare module '@material-ui/core/es/ListItem/index.js' {
   declare module.exports: $Exports<'@material-ui/core/es/ListItem/index'>;
 }
 declare module '@material-ui/core/es/ListItem/ListItem.js' {
   declare module.exports: $Exports<'@material-ui/core/es/ListItem/ListItem'>;
+}
+declare module '@material-ui/core/es/ListItem/MergeListContext.js' {
+  declare module.exports: $Exports<'@material-ui/core/es/ListItem/MergeListContext'>;
 }
 declare module '@material-ui/core/es/ListItemAvatar/index.js' {
   declare module.exports: $Exports<'@material-ui/core/es/ListItemAvatar/index'>;
@@ -3380,6 +3555,12 @@ declare module '@material-ui/core/es/styles/mergeClasses.js' {
 declare module '@material-ui/core/es/styles/MuiThemeProvider.js' {
   declare module.exports: $Exports<'@material-ui/core/es/styles/MuiThemeProvider'>;
 }
+declare module '@material-ui/core/es/styles/multiKeyStore.js' {
+  declare module.exports: $Exports<'@material-ui/core/es/styles/multiKeyStore'>;
+}
+declare module '@material-ui/core/es/styles/reactJssContext.js' {
+  declare module.exports: $Exports<'@material-ui/core/es/styles/reactJssContext'>;
+}
 declare module '@material-ui/core/es/styles/shadows.js' {
   declare module.exports: $Exports<'@material-ui/core/es/styles/shadows'>;
 }
@@ -3437,6 +3618,12 @@ declare module '@material-ui/core/es/Table/index.js' {
 declare module '@material-ui/core/es/Table/Table.js' {
   declare module.exports: $Exports<'@material-ui/core/es/Table/Table'>;
 }
+declare module '@material-ui/core/es/Table/TableContext.js' {
+  declare module.exports: $Exports<'@material-ui/core/es/Table/TableContext'>;
+}
+declare module '@material-ui/core/es/Table/Tablelvl2Context.js' {
+  declare module.exports: $Exports<'@material-ui/core/es/Table/Tablelvl2Context'>;
+}
 declare module '@material-ui/core/es/TableBody/index.js' {
   declare module.exports: $Exports<'@material-ui/core/es/TableBody/index'>;
 }
@@ -3467,11 +3654,8 @@ declare module '@material-ui/core/es/TablePagination/index.js' {
 declare module '@material-ui/core/es/TablePagination/TablePagination.js' {
   declare module.exports: $Exports<'@material-ui/core/es/TablePagination/TablePagination'>;
 }
-declare module '@material-ui/core/es/TablePaginationActions/index.js' {
-  declare module.exports: $Exports<'@material-ui/core/es/TablePaginationActions/index'>;
-}
-declare module '@material-ui/core/es/TablePaginationActions/TablePaginationActions.js' {
-  declare module.exports: $Exports<'@material-ui/core/es/TablePaginationActions/TablePaginationActions'>;
+declare module '@material-ui/core/es/TablePagination/TablePaginationActions.js' {
+  declare module.exports: $Exports<'@material-ui/core/es/TablePagination/TablePaginationActions'>;
 }
 declare module '@material-ui/core/es/TableRow/index.js' {
   declare module.exports: $Exports<'@material-ui/core/es/TableRow/index'>;
@@ -3508,6 +3692,9 @@ declare module '@material-ui/core/es/test-utils/createRender.js' {
 }
 declare module '@material-ui/core/es/test-utils/createShallow.js' {
   declare module.exports: $Exports<'@material-ui/core/es/test-utils/createShallow'>;
+}
+declare module '@material-ui/core/es/test-utils/findOutermostIntrinsic.js' {
+  declare module.exports: $Exports<'@material-ui/core/es/test-utils/findOutermostIntrinsic'>;
 }
 declare module '@material-ui/core/es/test-utils/getClasses.js' {
   declare module.exports: $Exports<'@material-ui/core/es/test-utils/getClasses'>;
@@ -3548,11 +3735,17 @@ declare module '@material-ui/core/es/Typography/index.js' {
 declare module '@material-ui/core/es/Typography/Typography.js' {
   declare module.exports: $Exports<'@material-ui/core/es/Typography/Typography'>;
 }
-declare module '@material-ui/core/es/utils/exactProp.js' {
-  declare module.exports: $Exports<'@material-ui/core/es/utils/exactProp'>;
+declare module '@material-ui/core/es/useMediaQuery/index.js' {
+  declare module.exports: $Exports<'@material-ui/core/es/useMediaQuery/index'>;
 }
-declare module '@material-ui/core/es/utils/getDisplayName.js' {
-  declare module.exports: $Exports<'@material-ui/core/es/utils/getDisplayName'>;
+declare module '@material-ui/core/es/useMediaQuery/unstable_useMediaQuery.js' {
+  declare module.exports: $Exports<'@material-ui/core/es/useMediaQuery/unstable_useMediaQuery'>;
+}
+declare module '@material-ui/core/es/useMediaQuery/unstable_useMediaQueryTheme.js' {
+  declare module.exports: $Exports<'@material-ui/core/es/useMediaQuery/unstable_useMediaQueryTheme'>;
+}
+declare module '@material-ui/core/es/utils/deprecatedPropType.js' {
+  declare module.exports: $Exports<'@material-ui/core/es/utils/deprecatedPropType'>;
 }
 declare module '@material-ui/core/es/utils/helpers.js' {
   declare module.exports: $Exports<'@material-ui/core/es/utils/helpers'>;
@@ -3614,6 +3807,12 @@ declare module '@material-ui/core/ExpansionPanelSummary/ExpansionPanelSummary.js
 declare module '@material-ui/core/ExpansionPanelSummary/index.js' {
   declare module.exports: $Exports<'@material-ui/core/ExpansionPanelSummary/index'>;
 }
+declare module '@material-ui/core/Fab/Fab.js' {
+  declare module.exports: $Exports<'@material-ui/core/Fab/Fab'>;
+}
+declare module '@material-ui/core/Fab/index.js' {
+  declare module.exports: $Exports<'@material-ui/core/Fab/index'>;
+}
 declare module '@material-ui/core/Fade/Fade.js' {
   declare module.exports: $Exports<'@material-ui/core/Fade/Fade'>;
 }
@@ -3629,8 +3828,17 @@ declare module '@material-ui/core/FilledInput/index.js' {
 declare module '@material-ui/core/FormControl/FormControl.js' {
   declare module.exports: $Exports<'@material-ui/core/FormControl/FormControl'>;
 }
+declare module '@material-ui/core/FormControl/FormControlContext.js' {
+  declare module.exports: $Exports<'@material-ui/core/FormControl/FormControlContext'>;
+}
+declare module '@material-ui/core/FormControl/formControlState.js' {
+  declare module.exports: $Exports<'@material-ui/core/FormControl/formControlState'>;
+}
 declare module '@material-ui/core/FormControl/index.js' {
   declare module.exports: $Exports<'@material-ui/core/FormControl/index'>;
+}
+declare module '@material-ui/core/FormControl/withFormControlContext.js' {
+  declare module.exports: $Exports<'@material-ui/core/FormControl/withFormControlContext'>;
 }
 declare module '@material-ui/core/FormControlLabel/FormControlLabel.js' {
   declare module.exports: $Exports<'@material-ui/core/FormControlLabel/FormControlLabel'>;
@@ -3797,17 +4005,29 @@ declare module '@material-ui/core/LinearProgress/index.js' {
 declare module '@material-ui/core/LinearProgress/LinearProgress.js' {
   declare module.exports: $Exports<'@material-ui/core/LinearProgress/LinearProgress'>;
 }
+declare module '@material-ui/core/Link/index.js' {
+  declare module.exports: $Exports<'@material-ui/core/Link/index'>;
+}
+declare module '@material-ui/core/Link/Link.js' {
+  declare module.exports: $Exports<'@material-ui/core/Link/Link'>;
+}
 declare module '@material-ui/core/List/index.js' {
   declare module.exports: $Exports<'@material-ui/core/List/index'>;
 }
 declare module '@material-ui/core/List/List.js' {
   declare module.exports: $Exports<'@material-ui/core/List/List'>;
 }
+declare module '@material-ui/core/List/ListContext.js' {
+  declare module.exports: $Exports<'@material-ui/core/List/ListContext'>;
+}
 declare module '@material-ui/core/ListItem/index.js' {
   declare module.exports: $Exports<'@material-ui/core/ListItem/index'>;
 }
 declare module '@material-ui/core/ListItem/ListItem.js' {
   declare module.exports: $Exports<'@material-ui/core/ListItem/ListItem'>;
+}
+declare module '@material-ui/core/ListItem/MergeListContext.js' {
+  declare module.exports: $Exports<'@material-ui/core/ListItem/MergeListContext'>;
 }
 declare module '@material-ui/core/ListItemAvatar/index.js' {
   declare module.exports: $Exports<'@material-ui/core/ListItemAvatar/index'>;
@@ -4055,6 +4275,12 @@ declare module '@material-ui/core/styles/mergeClasses.js' {
 declare module '@material-ui/core/styles/MuiThemeProvider.js' {
   declare module.exports: $Exports<'@material-ui/core/styles/MuiThemeProvider'>;
 }
+declare module '@material-ui/core/styles/multiKeyStore.js' {
+  declare module.exports: $Exports<'@material-ui/core/styles/multiKeyStore'>;
+}
+declare module '@material-ui/core/styles/reactJssContext.js' {
+  declare module.exports: $Exports<'@material-ui/core/styles/reactJssContext'>;
+}
 declare module '@material-ui/core/styles/shadows.js' {
   declare module.exports: $Exports<'@material-ui/core/styles/shadows'>;
 }
@@ -4112,6 +4338,12 @@ declare module '@material-ui/core/Table/index.js' {
 declare module '@material-ui/core/Table/Table.js' {
   declare module.exports: $Exports<'@material-ui/core/Table/Table'>;
 }
+declare module '@material-ui/core/Table/TableContext.js' {
+  declare module.exports: $Exports<'@material-ui/core/Table/TableContext'>;
+}
+declare module '@material-ui/core/Table/Tablelvl2Context.js' {
+  declare module.exports: $Exports<'@material-ui/core/Table/Tablelvl2Context'>;
+}
 declare module '@material-ui/core/TableBody/index.js' {
   declare module.exports: $Exports<'@material-ui/core/TableBody/index'>;
 }
@@ -4142,11 +4374,8 @@ declare module '@material-ui/core/TablePagination/index.js' {
 declare module '@material-ui/core/TablePagination/TablePagination.js' {
   declare module.exports: $Exports<'@material-ui/core/TablePagination/TablePagination'>;
 }
-declare module '@material-ui/core/TablePaginationActions/index.js' {
-  declare module.exports: $Exports<'@material-ui/core/TablePaginationActions/index'>;
-}
-declare module '@material-ui/core/TablePaginationActions/TablePaginationActions.js' {
-  declare module.exports: $Exports<'@material-ui/core/TablePaginationActions/TablePaginationActions'>;
+declare module '@material-ui/core/TablePagination/TablePaginationActions.js' {
+  declare module.exports: $Exports<'@material-ui/core/TablePagination/TablePaginationActions'>;
 }
 declare module '@material-ui/core/TableRow/index.js' {
   declare module.exports: $Exports<'@material-ui/core/TableRow/index'>;
@@ -4183,6 +4412,9 @@ declare module '@material-ui/core/test-utils/createRender.js' {
 }
 declare module '@material-ui/core/test-utils/createShallow.js' {
   declare module.exports: $Exports<'@material-ui/core/test-utils/createShallow'>;
+}
+declare module '@material-ui/core/test-utils/findOutermostIntrinsic.js' {
+  declare module.exports: $Exports<'@material-ui/core/test-utils/findOutermostIntrinsic'>;
 }
 declare module '@material-ui/core/test-utils/getClasses.js' {
   declare module.exports: $Exports<'@material-ui/core/test-utils/getClasses'>;
@@ -4229,11 +4461,17 @@ declare module '@material-ui/core/umd/material-ui.development.js' {
 declare module '@material-ui/core/umd/material-ui.production.min.js' {
   declare module.exports: $Exports<'@material-ui/core/umd/material-ui.production.min'>;
 }
-declare module '@material-ui/core/utils/exactProp.js' {
-  declare module.exports: $Exports<'@material-ui/core/utils/exactProp'>;
+declare module '@material-ui/core/useMediaQuery/index.js' {
+  declare module.exports: $Exports<'@material-ui/core/useMediaQuery/index'>;
 }
-declare module '@material-ui/core/utils/getDisplayName.js' {
-  declare module.exports: $Exports<'@material-ui/core/utils/getDisplayName'>;
+declare module '@material-ui/core/useMediaQuery/unstable_useMediaQuery.js' {
+  declare module.exports: $Exports<'@material-ui/core/useMediaQuery/unstable_useMediaQuery'>;
+}
+declare module '@material-ui/core/useMediaQuery/unstable_useMediaQueryTheme.js' {
+  declare module.exports: $Exports<'@material-ui/core/useMediaQuery/unstable_useMediaQueryTheme'>;
+}
+declare module '@material-ui/core/utils/deprecatedPropType.js' {
+  declare module.exports: $Exports<'@material-ui/core/utils/deprecatedPropType'>;
 }
 declare module '@material-ui/core/utils/helpers.js' {
   declare module.exports: $Exports<'@material-ui/core/utils/helpers'>;

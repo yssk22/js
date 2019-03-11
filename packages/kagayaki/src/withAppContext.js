@@ -1,5 +1,5 @@
 /* @flow */
-import React, { type ComponentType, type ElementConfig } from 'react';
+import React, { type ComponentType } from 'react';
 
 export type AppAuth = ?{
   [string]: any
@@ -34,13 +34,11 @@ const defaultCtx: AppContext = {
   auth: null
 };
 
-const ApplicationContext = React.createContext(defaultCtx);
+const ApplicationContext: React$Context<AppContext> = React.createContext(defaultCtx);
 
 export const ApplicationContextProvider = ApplicationContext.Provider;
 
-export function withAppContext<T>(
-  Component: ComponentType<T>
-): ComponentType<ElementConfig<ComponentType<T>>> {
+export function withAppContext<T>(Component: ComponentType<T>) {
   return (props: T) => {
     return (
       <ApplicationContext.Consumer>

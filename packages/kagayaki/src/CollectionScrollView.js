@@ -1,6 +1,7 @@
 /* @flow */
 import React, { type Node } from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, Button, type StyleProp, type ViewStyle } from 'react-native';
+
 import ScrollView from './ScrollView';
 import { rest } from '@yssk22/utakata';
 
@@ -11,13 +12,14 @@ const ErrorContainerStyle = {
 };
 
 type Props<T> = {
+  containerStyle: StyleProp<ViewStyle>,
   settings: rest.ResourceSettings<T>,
   errorText: ?string,
   retryButtonText: ?string,
   renderResource: (v: T) => Node
 };
 
-class RestRefreshableScrollViewList<T> extends React.Component<rest.Props & Props<T>> {
+class CollectionScrollView<T> extends React.Component<rest.Props & Props<T>> {
   constructor(props: rest.Props & Props<T>) {
     super(props);
   }
@@ -50,6 +52,7 @@ class RestRefreshableScrollViewList<T> extends React.Component<rest.Props & Prop
     }
     return (
       <ScrollView
+        containerStyle={this.props.containerStyle}
         data={data}
         refreshing={refreshing}
         onRefresh={onRefresh}
@@ -60,4 +63,4 @@ class RestRefreshableScrollViewList<T> extends React.Component<rest.Props & Prop
   }
 }
 
-export default rest.withResources(RestRefreshableScrollViewList);
+export default rest.withResources(CollectionScrollView);

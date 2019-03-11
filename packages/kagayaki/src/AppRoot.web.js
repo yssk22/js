@@ -40,7 +40,7 @@ export default class AppRoot extends React.Component<Props> {
     const root = document.getElementById('root');
     if (!root) {
       events.fatal(ComponentName, 'no root element is found');
-      return null;
+      return <div />;
     }
     try {
       const appData: AppData = parseJSONAttribute(root, 'data-app');
@@ -69,6 +69,7 @@ export default class AppRoot extends React.Component<Props> {
       events.fatal(ComponentName, 'failed to render AppRoot', {
         exception: e.toString()
       });
+      return <div />;
     }
   }
 }
