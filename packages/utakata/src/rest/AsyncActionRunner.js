@@ -58,18 +58,22 @@ export class AsyncActionRunner<T> {
       default:
         this._options.reduceResource = reduce;
     }
+    return this;
   }
 
   replaceCollection(replace: boolean) {
     this._options.replaceCollection = replace;
+    return this;
   }
 
   onSuccess(cb: (string | T) => void) {
     this._options.onSuccess = cb;
+    return this;
   }
 
   onFailure(cb: APIError => void) {
     this._options.onFailure = cb;
+    return this;
   }
 
   run() {
