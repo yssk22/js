@@ -8,9 +8,9 @@ module.exports = {
   },
   devServer: function(configFunction) {
     return function(proxy, allowedHost) {
-      proxy[0]['target'] = 'http://localhost:8080/';
-      if (process.env['USE_PROD_API'] == '1') {
-        proxy[0]['target'] = 'http://speedland-prod.appspot.com:8080/';
+      if (process.env['API_TARGET']) {
+        console.log('using API target:', process.env['API_TARGET']);
+        proxy[0]['target'] = process.env['API_TARGET'];
       }
       return configFunction(proxy);
     };
