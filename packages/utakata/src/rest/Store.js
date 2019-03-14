@@ -145,6 +145,41 @@ export function updateStore<T>(
   });
 }
 
+// revert `data` using ids
+export function revertStore<T>(
+  ids: Array<string>,
+  data: Array<ResourceWithState<T>>,
+  dataIndex: { [string]: number }
+) {
+  ids.forEach(id => {
+    const found = findResource(data, dataIndex, id);
+    if (!found) {
+      events.error(ComponentName, `cannot find "${id}"`, {
+        id: id
+      });
+      return;
+    }
+    if (!found.resource.__state) {
+      events.fatal(ComponentName, `null resource state for ${found.resource.toString()}`);
+      return;
+    }
+    if (!found.resource.__state.previous) {
+      events.fatal(ComponentName, `no previous object for ${found.resource.toString()}`);
+      return;
+    }
+    if (found.resource.__state.status !== ResourceStatusValues.EDIT) {
+      events.error(
+        ComponentName,
+        `invalid resource state '${found.resource.__state.status}' for ${found.resource.toString()}`
+      );
+    }
+    found.resource = object.deepCopy(found.resource.__state.previous);
+    found.resource.__state.previous = null;
+    found.resource.__state.status = ResourceStatusValues.NONE;
+    data[found.index] = found.resource;
+  });
+}
+
 // update resource fields by UpdateArgs
 export function updateResource<T>(
   resource: ResourceWithState<T>,

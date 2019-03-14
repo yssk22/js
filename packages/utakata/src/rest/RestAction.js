@@ -77,6 +77,10 @@ export default class RestAction<T> {
     return this._updateAction.updateResources(settings, update, ...updates);
   }
 
+  revertResources(settings: ResourceSettings<T>, ...ids: Array<string>) {
+    return this._updateAction.revertResources(settings, ...ids);
+  }
+
   saveResources(settings: ResourceSettings<T>, ...ids: Array<string>): AsyncActionRunner<T> {
     return this._updateAction.saveResources(settings, ...ids);
   }

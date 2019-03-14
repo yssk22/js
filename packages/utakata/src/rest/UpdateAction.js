@@ -7,6 +7,7 @@ import {
   type ResourceErrors,
   type UpdateArgs,
   ResourceStatusValues,
+  revertStore,
   updateStore,
   findResource,
   updateByServer
@@ -23,6 +24,11 @@ export type UpdateDraftsDispatchArgs<T> = ActionDispatchArgs<T> & {
 export type UpdateResourcesDispatchArgs<T> = ActionDispatchArgs<T> & {
   command: 'updateResources',
   updates: Array<UpdateArgs>
+};
+
+export type RevertResourcesDispatchArgs<T> = ActionDispatchArgs<T> & {
+  command: 'revertResources',
+  targets: Array<string>
 };
 
 export type SaveResourcesDispatchArgs<T> = ActionDispatchArgs<T> & {
@@ -49,6 +55,7 @@ export type ErrorSaveResourcesDispatchArgs<T> = ActionDispatchArgs<T> & {
 export type UpdateActionDispatchArgs<T> =
   | UpdateDraftsDispatchArgs<T>
   | UpdateResourcesDispatchArgs<T>
+  | RevertResourcesDispatchArgs<T>
   | SaveResourcesDispatchArgs<T>
   | DoneSaveResourcesDispatchArgs<T>
   | ErrorSaveResourcesDispatchArgs<T>;
@@ -97,6 +104,24 @@ export class UpdateAction<T> {
     action: UpdateResourcesDispatchArgs<T>
   ): ResourceStore<T> {
     updateStore(action.updates, store.data, store.dataIndex);
+    return store;
+  }
+
+  revertResources(settings: ResourceSettings<T>, ...ids: Array<string>) {
+    this._dispatch({
+      type: ActionType,
+      command: 'revertResources',
+      targets: ids,
+      settings: settings,
+      caller: this
+    });
+  }
+
+  static reduceRevertResources<T>(
+    store: ResourceStore<T>,
+    action: RevertResourcesDispatchArgs<T>
+  ): ResourceStore<T> {
+    revertStore(action.targets || [], store.data, store.dataIndex);
     return store;
   }
 

@@ -6,6 +6,7 @@ import {
   UpdateAction,
   type UpdateDraftsDispatchArgs,
   type UpdateResourcesDispatchArgs,
+  type RevertResourcesDispatchArgs,
   type SaveResourcesDispatchArgs,
   type DoneSaveResourcesDispatchArgs,
   type ErrorSaveResourcesDispatchArgs
@@ -43,9 +44,8 @@ describe('rest.Update', () => {
           }
         }
       });
-      const dispatchArgs = ((dispatch.mock.calls[0][0]: any): UpdateDraftsDispatchArgs<
-        TestHelper.Model
-      >);
+      const dispatchArgs = ((dispatch.mock
+        .calls[0][0]: any): UpdateDraftsDispatchArgs<TestHelper.Model>);
       test('updateDrafts dispatch a updateDrafts command', () => {
         expect(dispatchArgs).toEqual({
           type: ActionType,
@@ -112,9 +112,8 @@ describe('rest.Update', () => {
           }
         }
       });
-      const dispatchArgs = ((dispatch.mock.calls[0][0]: any): UpdateResourcesDispatchArgs<
-        TestHelper.Model
-      >);
+      const dispatchArgs = ((dispatch.mock
+        .calls[0][0]: any): UpdateResourcesDispatchArgs<TestHelper.Model>);
       test('updateResources dispatch a updateResources command', () => {
         expect(dispatchArgs).toEqual({
           type: ActionType,
@@ -160,9 +159,8 @@ describe('rest.Update', () => {
         const action = new UpdateAction(dispatch);
         const runner = action.saveResources(TestHelper.ModelSettings, id);
         runner.run();
-        const dispatchArgs = ((dispatch.mock.calls[0][0]: any): SaveResourcesDispatchArgs<
-          TestHelper.Model
-        >);
+        const dispatchArgs = ((dispatch.mock
+          .calls[0][0]: any): SaveResourcesDispatchArgs<TestHelper.Model>);
 
         test('saveResources dispatch a createDraft command', () => {
           expect(dispatchArgs).toEqual({
@@ -212,9 +210,8 @@ describe('rest.Update', () => {
             const dispatch = jest.fn();
             const action = new UpdateAction(dispatch);
             action.doneSaveResources(TestHelper.ModelSettings, [updated], runner._options);
-            const dispatchArgs = ((dispatch.mock.calls[0][0]: any): DoneSaveResourcesDispatchArgs<
-              TestHelper.Model
-            >);
+            const dispatchArgs = ((dispatch.mock
+              .calls[0][0]: any): DoneSaveResourcesDispatchArgs<TestHelper.Model>);
             test('doneSaveResources dispatch a doneSaveDrafts command', () => {
               expect(dispatchArgs).toEqual({
                 type: ActionType,
@@ -342,6 +339,45 @@ describe('rest.Update', () => {
                 ]);
               });
             });
+          });
+        });
+      });
+      describe('step 3. revert a resource', () => {
+        const dispatch = jest.fn();
+        const action = new UpdateAction(dispatch);
+        action.revertResources(TestHelper.ModelSettings, id);
+        const dispatchArgs = ((dispatch.mock
+          .calls[0][0]: any): RevertResourcesDispatchArgs<TestHelper.Model>);
+
+        test('revertResources dispatch a revertResources command', () => {
+          expect(dispatchArgs).toEqual({
+            type: ActionType,
+            command: 'revertResources',
+            targets: [id],
+            settings: TestHelper.ModelSettings,
+            caller: action
+          });
+        });
+        describe('step 3-1. reverted', () => {
+          const step31Store = UpdateAction.reduceRevertResources(
+            object.deepCopy(step1Store),
+            dispatchArgs
+          );
+
+          test('reduceRevertResources revert fields in a resource in store', () => {
+            expect(step31Store.dataIndex[id]).toBe(0);
+            expect(step31Store.data).toEqual([
+              {
+                id: id,
+                message: original.message,
+                __state: {
+                  error: null,
+                  fieldErrors: {},
+                  previous: null,
+                  status: 'none'
+                }
+              }
+            ]);
           });
         });
       });
