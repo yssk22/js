@@ -30,6 +30,14 @@ export default class Helper<T> {
     return r.__state.status === ResourceStatusValues.DELETING;
   }
 
+  static isReading<T>(r: ResourceWithState<T>): boolean {
+    return r.__state.status === ResourceStatusValues.READING;
+  }
+
+  static isEditing<T>(r: ResourceWithState<T>): boolean {
+    return r.__state.status === ResourceStatusValues.EDIT;
+  }
+
   constructor(settings: ResourceSettings<T>, props: any) {
     this.settings = settings;
     this.store = props[settings.getCollectionUrl()];
