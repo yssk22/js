@@ -1,6 +1,7 @@
 /* @flow */
 import React from 'react';
 import TextField from '@material-ui/core/TextField/TextField';
+import InputAdornment from '@material-ui/core/InputAdornment/InputAdornment';
 import type { TextFieldProps } from './TextField.common';
 import { withStyles } from '@material-ui/core/styles/index';
 
@@ -11,14 +12,12 @@ const styles = theme => {
       // To calculate input width with 100%, use border-box for boxSizing
       boxSizing: 'border-box'
     },
-    inputReadOnly: {
-      backgroundColor: '#eeeeee'
-    }
+    inputReadOnly: {}
   };
 };
 
 const _TextField = function(props: TextFieldProps) {
-  const { classes, ...rest } = props;
+  const { classes, shrink, endAdornment, ...rest } = props;
   let onChange = undefined;
   if (props.onChange) {
     onChange = ev => {
@@ -26,19 +25,21 @@ const _TextField = function(props: TextFieldProps) {
     };
   }
   const c = classes || {};
-  const inputClass = [c.input];
-  if (props.readOnly) {
-    inputClass.push(c.inputReadOnly);
-  }
-  console.log(inputClass);
   return (
     <TextField
       className={c.container}
       {...rest}
       onChange={onChange}
+      InputProps={{
+        endAdornment: endAdornment ? (
+          <InputAdornment position="end">{endAdornment}</InputAdornment>
+        ) : null
+      }}
       inputProps={{
-        className: inputClass,
-        readOnly: props.readOnly || false
+        className: c.input
+      }}
+      InputLabelProps={{
+        shrink: shrink
       }}
     />
   );
