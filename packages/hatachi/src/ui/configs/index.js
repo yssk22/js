@@ -2,9 +2,9 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { rest } from '@yssk22/utakata';
+import { mui } from '@yssk22/kagayaki';
 import { type AppContext, withAppContext, CollectionScrollView } from '@yssk22/kagayaki';
 import { genConfigResourceSettings, type Config } from '../../resources/Config';
-
 import ConfigItem from './ConfigItem';
 
 const styles = StyleSheet.create({
@@ -30,8 +30,10 @@ class Screen extends React.Component<AppContext> {
   }
 
   render() {
+    console.log(this.props.appData);
     return (
       <View style={styles.root}>
+        <mui.AppBar title={'Config: ' + this.props.appData.urlprefix} position="static" />
         <CollectionScrollView
           containerStyle={styles.collection}
           settings={this.settings}

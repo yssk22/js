@@ -10,16 +10,14 @@ const styles = StyleSheet.create({
     width: '100%',
     marginLeft: 5,
     marginRight: 5,
-    marginTop: 10,
-    display: 'flex',
-    flexDirection: 'row-reverse'
+    marginTop: 10
   },
   text: {
-    flexGrow: 1
+    // flexDirection: 'column'
   },
   buttons: {
     display: 'flex',
-    flexDirection: 'column'
+    flexDirection: 'row-reverse'
   }
 });
 
@@ -42,67 +40,71 @@ class ConfigItem extends React.Component<Props, State> {
 
   render() {
     const { settings, config } = this.props;
-    const readOnly = !this.state.edit;
-    const icon = readOnly ? 'edit' : 'save';
+    const disabled = !this.state.edit;
+    const icon = disabled ? 'edit' : 'save';
     return (
       <mui.ListItem style={styles.container}>
-        <View style={styles.buttons}>
-          {!readOnly && (
-            <mui.IconButton
-              icon="cancel"
-              onClick={() =>
-                this.setState(state => {
-                  return {
-                    edit: !state.edit
-                  };
-                })
-              }
-            />
-          )}
-          <mui.IconButton
-            icon={icon}
-            onClick={() => {
-              if (!readOnly) {
-                rest.Action.saveResources(settings, config.key)
-                  .onSuccess(() => {
+        <mui.TextField
+          label={config.key}
+          value={config.value}
+          helperText={config.description}
+          placeholder={'(not set)'}
+          disabled={disabled}
+          shrink
+          fullWidth
+          margin="normal"
+          variant="outlined"
+          endAdornment={
+            <View style={styles.buttons}>
+              {!disabled && (
+                <mui.IconButton
+                  icon="cancel"
+                  onClick={() => {
                     this.setState(state => {
                       return {
                         edit: !state.edit
                       };
                     });
-                  })
-                  .run();
-              } else {
-                this.setState(state => {
-                  return {
-                    edit: !state.edit
-                  };
-                });
-              }
-            }}
-          />
-        </View>
-        <View style={styles.text}>
-          <mui.TextField
-            label={config.key}
-            value={config.value}
-            helperText={config.description}
-            fullWidth
-            readOnly={readOnly}
-            margin="normal"
-            variant="outlined"
-            onChange={vv => {
-              rest.Action.updateResources(settings, {
-                id: config.key,
-                fields: {
-                  value: {
-                    value: vv
+                    rest.Action.revertResources(settings, config.key);
+                  }}
+                />
+              )}
+              <mui.IconButton
+                icon={icon}
+                onClick={() => {
+                  if (!disabled) {
+                    rest.Action.saveResources(settings, config.key)
+                      .onSuccess(() => {
+                        this.setState(state => {
+                          return {
+                            edit: !state.edit
+                          };
+                        });
+                      })
+                      .run();
+                  } else {
+                    this.setState(state => {
+                      return {
+                        edit: !state.edit
+                      };
+                    });
                   }
+                }}
+              />
+            </View>
+          }
+          onChange={vv => {
+            rest.Action.updateResources(settings, {
+              id: config.key,
+              fields: {
+                value: {
+                  value: vv
                 }
-              });
-            }}
-          />
-        </View>
+              }
+            });
+          }}
+        />
+        {/* </View> */}
       </mui.ListItem>
     );
   }

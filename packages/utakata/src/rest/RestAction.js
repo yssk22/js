@@ -25,6 +25,7 @@ const commands = {
   errorGetCollection: GetAction,
   updateDrafts: UpdateAction,
   updateResources: UpdateAction,
+  revertResources: UpdateAction,
   saveResources: UpdateAction,
   doneSaveResources: UpdateAction,
   errorSaveResources: UpdateAction
