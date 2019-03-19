@@ -2,7 +2,7 @@
 import React from 'react';
 
 import { type ButtonProps } from './IconButton.common';
-import Button from '@material-ui/core/Button/Button';
+import IconButton from '@material-ui/core/IconButton/IconButton';
 import Cancel from '@material-ui/icons/Cancel';
 import Delete from '@material-ui/icons/Delete';
 import Edit from '@material-ui/icons/Edit';
@@ -17,16 +17,16 @@ const iconMap = {
 
 const iconMapKeys = Object.keys(iconMap);
 
-const IconButton = (props: ButtonProps) => {
+const _IconButton = (props: ButtonProps) => {
   const Icon = iconMap[props.icon];
   if (Icon === undefined) {
     throw new Error('icon property must be one of ' + iconMapKeys.join(','));
   }
   return (
-    <Button onClick={props.onClick}>
+    <IconButton onClick={props.onClick}>
       <Icon />
-    </Button>
+    </IconButton>
   );
 };
 
-export default IconButton;
+export default _IconButton;
