@@ -1,4 +1,5 @@
 /* @flow */
+import AppBar from './AppBar';
 import Card from './Card';
 import CardActions from './CardActions';
 import CardContent from './CardContent';
@@ -8,4 +9,14 @@ import ListItem from './ListItem';
 import ListItemText from './ListItemText';
 import TextField from './TextField';
 
-export { Card, CardActions, CardContent, IconButton, List, ListItem, ListItemText, TextField };
+export {
+  AppBar,
+  Card,
+  CardActions,
+  CardContent,
+  IconButton,
+  List,
+  ListItem,
+  ListItemText,
+  TextField
+};
