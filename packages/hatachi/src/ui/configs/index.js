@@ -30,7 +30,6 @@ class Screen extends React.Component<AppContext> {
   }
 
   render() {
-    console.log(this.props.appData);
     return (
       <View style={styles.root}>
         <mui.AppBar title={'Config: ' + this.props.appData.urlprefix} position="static" />
