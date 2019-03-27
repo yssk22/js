@@ -12,6 +12,7 @@ function nopSuccessCallback<T>(v: T) {}
 function nopFailureCallback(e: APIError) {}
 
 export type AsyncRequestOptions<T> = {
+  urlQuery: ?string,
   reduceResource: (T, T) => T,
   replaceCollection: boolean,
   onSuccess: (string | T) => void,
@@ -19,6 +20,7 @@ export type AsyncRequestOptions<T> = {
 };
 
 const DefaultRequestOptions: AsyncRequestOptions<any> = {
+  urlQuery: null,
   reduceResource: replaceResource,
   replaceCollection: true,
   onSuccess: nopSuccessCallback,
@@ -58,6 +60,11 @@ export class AsyncActionRunner<T> {
       default:
         this._options.reduceResource = reduce;
     }
+    return this;
+  }
+
+  urlQuery(query: ?string) {
+    this._options.urlQuery = query;
     return this;
   }
 

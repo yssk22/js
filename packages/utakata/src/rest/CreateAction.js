@@ -112,7 +112,9 @@ export class CreateAction<T> {
     (action.targets || []).forEach(id => {
       const found = findResource(store.drafts, store.draftIndex, id);
       if (found) {
-        const req = request.post(uri);
+        const req = action.requestOptions.urlQuery
+          ? request.post(`${uri}?${action.requestOptions.urlQuery}`)
+          : request.post(uri);
         const params = settings.createParams(found.resource);
         req.send(params);
         req.end((err, res) => {

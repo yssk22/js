@@ -68,7 +68,9 @@ export class DeleteAction<T> {
     const caller = action.caller;
     (action.targets || []).forEach(id => {
       const uri = url.defaultResolver.resolve(url.join(settings.getCollectionUrl(), `${id}.json`));
-      const req = request.delete(uri);
+      const req = action.requestOptions.urlQuery
+        ? request.delete(`${uri}?${action.requestOptions.urlQuery}`)
+        : request.delete(uri);
       req.end((err, res) => {
         err = genAPIError(err, res);
         if (err) {

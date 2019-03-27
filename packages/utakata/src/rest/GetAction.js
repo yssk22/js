@@ -90,7 +90,9 @@ export class GetAction<T> {
     const caller = action.caller;
     (action.targets || []).forEach(id => {
       const uri = url.defaultResolver.resolve(url.join(settings.getCollectionUrl(), `${id}.json`));
-      const req = request.get(uri);
+      const req = action.requestOptions.urlQuery
+        ? request.get(`${uri}?${action.requestOptions.urlQuery}`)
+        : request.get(uri);
       req.end((err, res) => {
         err = genAPIError(err, res);
         if (err) {
@@ -191,7 +193,9 @@ export class GetAction<T> {
     const caller = action.caller;
     const settings = action.settings;
     const uri = url.defaultResolver.resolve(settings.getCollectionUrl());
-    const req = request.get(uri);
+    const req = action.requestOptions.urlQuery
+      ? request.get(`${uri}?${action.requestOptions.urlQuery}`)
+      : request.get(uri);
     req.end((err, res) => {
       err = genAPIError(err, res);
       if (err) {

@@ -148,7 +148,9 @@ export class UpdateAction<T> {
       const uri = url.defaultResolver.resolve(url.join(settings.getCollectionUrl(), `${id}.json`));
       const found = findResource(store.data, store.dataIndex, id);
       if (found) {
-        const req = request.put(uri);
+        const req = action.requestOptions.urlQuery
+          ? request.put(`${uri}?${action.requestOptions.urlQuery}`)
+          : request.put(uri);
         const params = settings.updateParams(found.resource);
         req.send(params);
         req.end((err, res) => {
