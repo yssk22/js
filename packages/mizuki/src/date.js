@@ -9,6 +9,10 @@ const isDate = (t: any): boolean => {
   return t && t.getFullYear;
 };
 
+const isInvalidDate = (t: Date): boolean => {
+  return t.toString() === 'Invalid Date';
+};
+
 const n = (d: number): string => {
   if (d >= 10) {
     return '' + d;
@@ -39,7 +43,7 @@ const convertTimezone = (t: Date, timezoneOffset: ?number): Date => {
 
 const toDateString = (t: ?(Date | string), timezoneOffset: ?number): string => {
   t = parseDate(t);
-  if (!t) {
+  if (isInvalidDate(t)) {
     return INVALID_DATE_STRING;
   }
   t = convertTimezone(t, timezoneOffset);
@@ -48,7 +52,7 @@ const toDateString = (t: ?(Date | string), timezoneOffset: ?number): string => {
 
 const toTimeString = (t: ?(Date | string), timezoneOffset: ?number): string => {
   t = parseDate(t);
-  if (!t) {
+  if (isInvalidDate(t)) {
     return INVALID_DATE_STRING;
   }
   t = convertTimezone(t, timezoneOffset);
@@ -65,7 +69,7 @@ const toDateTimeString = (t: ?(Date | string), timezoneOffset: ?number): string 
 
 const toHumanDateString = (t: ?(Date | string), timezoneOffset: ?number): string => {
   t = parseDate(t);
-  if (!t) {
+  if (isInvalidDate(t)) {
     return INVALID_DATE_STRING;
   }
   t = convertTimezone(t, timezoneOffset);
@@ -77,7 +81,7 @@ const toHumanDateString = (t: ?(Date | string), timezoneOffset: ?number): string
 
 const toHumanTimeString = (t: ?(Date | string), timezoneOffset: ?number): string => {
   t = parseDate(t);
-  if (!t) {
+  if (isInvalidDate(t)) {
     return INVALID_DATE_STRING;
   }
   t = convertTimezone(t, timezoneOffset);
@@ -90,7 +94,7 @@ const toHumanTimeString = (t: ?(Date | string), timezoneOffset: ?number): string
 
 const toHumanDateTimeString = (t: ?(Date | string), timezoneOffset: ?number): string => {
   t = parseDate(t);
-  if (!t) {
+  if (isInvalidDate(t)) {
     return INVALID_DATE_STRING;
   }
   return `${toHumanDateString(t, timezoneOffset)} ${toHumanTimeString(t, timezoneOffset)}`;
@@ -163,7 +167,7 @@ const isDateString = (t: string): boolean => {
 const countDays = (t1: ?(Date | string), t2: ?(Date | string)): number => {
   t1 = parseDate(t1);
   t2 = parseDate(t2);
-  if (!t1 || !t2) {
+  if (isInvalidDate(t1) || isInvalidDate(t2)) {
     return 0;
   }
   return Math.floor((t1.getTime() - t2.getTime()) / (1000 * 60 * 60 * 24)) + 1;
