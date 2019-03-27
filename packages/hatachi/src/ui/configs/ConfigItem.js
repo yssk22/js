@@ -34,9 +34,6 @@ class ConfigItem extends React.Component<Props, State> {
   state = {
     edit: false
   };
-  constructor(props: Props) {
-    super(props);
-  }
 
   render() {
     const { settings, config } = this.props;
@@ -53,7 +50,6 @@ class ConfigItem extends React.Component<Props, State> {
           shrink
           fullWidth
           margin="normal"
-          variant="outlined"
           endAdornment={
             <View style={styles.buttons}>
               {!disabled && (
