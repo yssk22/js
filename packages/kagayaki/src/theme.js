@@ -1,4 +1,8 @@
 /* @flow */
 
 // default theme
-module.exports = {};
+module.exports = {
+  typography: {
+    useNextVariants: true
+  }
+};
