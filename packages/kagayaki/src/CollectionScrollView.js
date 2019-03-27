@@ -14,8 +14,10 @@ const ErrorContainerStyle = {
 type Props<T> = {
   containerStyle: StyleProp<ViewStyle>,
   settings: rest.ResourceSettings<T>,
-  errorText: ?string,
-  retryButtonText: ?string,
+  errorText?: string,
+  retryButtonText?: string,
+  renderError?: Node,
+  renderEmpty?: Node,
   renderResource: (v: T) => Node
 };
 
@@ -29,7 +31,15 @@ class CollectionScrollView<T> extends React.Component<rest.Props & Props<T>> {
   }
 
   render() {
-    const { settings, errorText, retryButtonText, renderResource, ...otherProps } = this.props;
+    const {
+      settings,
+      errorText,
+      retryButtonText,
+      renderError,
+      renderEmpty,
+      renderResource,
+      ...otherProps
+    } = this.props;
     const helper = new rest.Helper(settings, this.props.rest);
     const data = helper.getData();
     const refreshing = helper.isCollectionLoading();
@@ -38,6 +48,9 @@ class CollectionScrollView<T> extends React.Component<rest.Props & Props<T>> {
     };
     const error = helper.getError();
     if (error !== null) {
+      if (renderError) {
+        return renderError;
+      }
       return (
         <View style={ErrorContainerStyle}>
           <Text>{errorText || error}</Text>
@@ -50,6 +63,12 @@ class CollectionScrollView<T> extends React.Component<rest.Props & Props<T>> {
         </View>
       );
     }
+    if (data.length === 0) {
+      if (renderEmpty) {
+        return renderEmpty;
+      }
+    }
+
     return (
       <ScrollView
         containerStyle={this.props.containerStyle}
